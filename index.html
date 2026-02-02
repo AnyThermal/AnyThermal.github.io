@@ -87,7 +87,7 @@
             <!-- Links -->
             <div class="publication-links">
               <span class="link-block">
-                <a href="assets/AnyThermal.pdf" class="external-link button is-normal is-rounded is-dark" download>
+                <a href="assets/AnyThermal.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank">
                   <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
@@ -104,29 +104,33 @@
         </div>
 
         <!-- Abstract -->
-        <div class="columns is-centered" id="abstract">
-          <div class="column is-two-thirds">
-            <h2 class="title is-3 has-text-centered">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>
-                We present <b>AnyThermal</b>, a task-agnostic thermal feature extraction backbone designed to provide strong generalization across diverse robotic perception tasks and environments.[file:1]
-              </p>
-              <p>
-                AnyThermal is distilled from large-scale RGB foundation models (DINOv2) using synchronized RGB–thermal data collected from urban, indoor, aerial, and off-road domains.[file:1]
-              </p>
-              <p>
-                To support this, we introduce the <b>TartanRGBT Platform</b>, an open-source hardware system for synchronized RGB–thermal data collection, and the <b>TartanRGBT Dataset</b>, a diverse multi-environment RGB–thermal dataset.[file:1][file:2]
-              </p>
-              <p>
-                AnyThermal achieves state-of-the-art performance on cross-modal place recognition, thermal segmentation, and monocular thermal depth estimation, with improvements of up to 36% over existing baselines.[file:1][file:2]
-              </p>
-            </div>
-          </div>
-        </div>
+<div class="columns is-centered" id="abstract">
+  <div class="column is-full">
+    <h2 class="title is-3 has-text-centered">Abstract</h2>
 
-      </div>
+    <!-- Graphical Abstract: full row width -->
+    <div class="has-text-centered" style="margin-bottom:1.5rem;">
+      <img src="assets/AnyThermal-intro.png"
+           alt="AnyThermal graphical abstract"
+           style="width:100%; border-radius:8px;">
     </div>
-  </section>
+
+    <div class="content has-text-justified">
+      <p>
+        We present <b>AnyThermal</b>, a task-agnostic thermal feature extraction backbone designed to provide strong generalization across diverse robotic perception tasks and environments.
+      </p>
+      <p>
+        AnyThermal is distilled from large-scale RGB foundation models (DINOv2) using synchronized RGB–thermal data collected from urban, indoor, aerial, and off-road domains.
+      </p>
+      <p>
+        To support this, we introduce the <b>TartanRGBT Platform</b>, an open-source hardware system for synchronized RGB–thermal data collection, and the <b>TartanRGBT Dataset</b>, a diverse multi-environment RGB–thermal dataset.
+      </p>
+      <p>
+        AnyThermal achieves state-of-the-art performance on cross-modal place recognition, thermal segmentation, and monocular thermal depth estimation, with improvements of up to 36% over existing baselines.
+      </p>
+    </div>
+  </div>
+</div>
 
 
   <!-- KEY CONTRIBUTIONS -->
@@ -137,11 +141,11 @@
           <h2 class="title is-3 has-text-centered">Key Contributions</h2>
           <div class="content">
             <ul>
-              <li><b>AnyThermal:</b> a DINOv2-based thermal encoder obtained via RGB–thermal knowledge distillation, usable as a drop-in backbone for multiple tasks.[file:1][file:2]</li>
-              <li><b>Task-agnostic training:</b> contrastive distillation on CLS tokens across multiple RGB–T datasets spanning urban, indoor, aerial, and off-road environments.[file:1][file:2]</li>
-              <li><b>Downstream performance:</b> state-of-the-art cross-modal place recognition, thermal segmentation, and monocular thermal depth estimation, outperforming comparable RGB-only backbones.[file:1]</li>
-              <li><b>TartanRGBT platform:</b> first open-source synchronized stereo RGB–stereo thermal, IMU data collection rig built on NVIDIA Orin and FLIR Boson sensors.[file:1][file:2]</li>
-              <li><b>TartanRGBT dataset:</b> a balanced, diverse RGB–T dataset across four environments (indoor, urban, parks, off-road) with registered, time-synced pairs.[file:1][file:2]</li>
+              <li><b>AnyThermal:</b> a DINOv2-based thermal encoder obtained via RGB–thermal knowledge distillation, usable as a drop-in backbone for multiple tasks.</li>
+              <li><b>Task-agnostic training:</b> contrastive distillation on CLS tokens across multiple RGB–T datasets spanning urban, indoor, aerial, and off-road environments.</li>
+              <li><b>Downstream performance:</b> state-of-the-art cross-modal place recognition, thermal segmentation, and monocular thermal depth estimation, outperforming comparable RGB-only backbones.</li>
+              <li><b>TartanRGBT platform:</b> first open-source synchronized stereo RGB–stereo thermal, IMU data collection rig built on NVIDIA Orin and FLIR Boson sensors.</li>
+              <li><b>TartanRGBT dataset:</b> a balanced, diverse RGB–T dataset across four environments (indoor, urban, parks, off-road) with registered, time-synced pairs.</li>
             </ul>
           </div>
         </div>
@@ -160,32 +164,31 @@
             AnyThermal performance across indoor, park, off-road, and urban environments.
           </p>
 
-          <!-- 4 GIFs in a row -->
-          <div class="columns is-multiline is-mobile">
+          <div class="columns is-multiline is-centered">
 
-            <div class="column is-one-quarter-desktop is-half-mobile">
-              <img src="assets/indoor.gif" alt="Indoor results">
-              <p class="is-size-7">Indoor</p>
+            <div class="column is-half">
+              <img src="assets/indoor.gif" alt="Indoor results" style="width:100%; border-radius:8px;">
+              <p class="is-size-6">Indoor</p>
             </div>
 
-            <div class="column is-one-quarter-desktop is-half-mobile">
-              <img src="assets/parks.gif" alt="Park results">
-              <p class="is-size-7">Parks</p>
+            <div class="column is-half">
+              <img src="assets/parks.gif" alt="Park results" style="width:100%; border-radius:8px;">
+              <p class="is-size-6">Parks</p>
             </div>
 
-            <div class="column is-one-quarter-desktop is-half-mobile">
-              <img src="assets/offroad.gif" alt="Off-road results">
-              <p class="is-size-7">Off-road</p>
+            <div class="column is-half">
+              <img src="assets/offroad.gif" alt="Off-road results" style="width:100%; border-radius:8px;">
+              <p class="is-size-6">Off-road</p>
             </div>
 
-            <div class="column is-one-quarter-desktop is-half-mobile">
-              <img src="assets/urban.gif" alt="Urban results">
-              <p class="is-size-7">Urban</p>
+            <div class="column is-half">
+              <img src="assets/urban.gif" alt="Urban results" style="width:100%; border-radius:8px;">
+              <p class="is-size-6">Urban</p>
             </div>
 
           </div>
 
-          <p style="margin-top:0.75rem;">
+          <p style="margin-top:1rem;">
             Thermal segmentation and cross-modal place recognition examples highlight the benefits over RGB-only backbones.
           </p>
         </div>
@@ -194,8 +197,7 @@
   </div>
 </section>
 
-
-  <!-- METHOD: ANYTHERMAL BACKBONE -->
+  <!-- METHOD -->
   <section class="section section-anchor" id="method">
     <div class="container is-max-desktop">
 
@@ -206,21 +208,20 @@
           <h3 class="title is-4">RGB–Thermal Distillation</h3>
           <div class="content has-text-justified">
             <p>
-              AnyThermal uses two ViT-B/14 DINOv2 encoders: a frozen RGB teacher and a trainable thermal student, both initialized with pre-trained RGB weights.[file:1]
+              AnyThermal uses two ViT-B/14 DINOv2 encoders: a frozen RGB teacher and a trainable thermal student, both initialized with pre-trained RGB weights.
             </p>
             <p>
-              Thermal images are converted to three channels and passed through the student; a contrastive loss aligns the CLS-token embeddings of corresponding RGB–thermal pairs, encouraging shared global semantics while relaxing pixel-perfect alignment.[file:1]
+              Thermal images are converted to three channels and passed through the student; a contrastive loss aligns the CLS-token embeddings of corresponding RGB–thermal pairs, encouraging shared global semantics while relaxing pixel-perfect alignment.
             </p>
             <p>
-              Distillation is performed across multiple RGB–T datasets, allowing the backbone to learn environment-agnostic thermal features that support diverse downstream heads.[file:1][file:2]
+              Distillation is performed across multiple RGB–T datasets, allowing the backbone to learn environment-agnostic thermal features that support diverse downstream heads.
             </p>
           </div>
         </div>
         <div class="column is-half has-text-centered">
-          <!-- Distillation diagram from paper (Fig. 2) -->
           <img src="assets/student_teacher.png" alt="AnyThermal distillation overview" style="max-width:100%;">
           <p class="is-size-7">
-            Overview of RGB–thermal distillation and task-specific heads (VPR, segmentation, depth).[file:1]
+            Overview of RGB–thermal distillation and task-specific heads (VPR, segmentation, depth).
           </p>
         </div>
       </div>
@@ -230,9 +231,9 @@
           <h3 class="title is-4">Task Heads (Frozen Backbone)</h3>
           <div class="content">
             <ul>
-              <li><b>Cross-modal Place Recognition:</b> SALAD head over AnyThermal features with triplet loss, retrieving RGB database images for thermal queries across indoor, aerial, and urban datasets.[file:1][file:2]</li>
-              <li><b>Thermal Segmentation:</b> a lightweight two-layer MLP head over ViT patch embeddings, trained with Dice loss to segment MFNet thermal scenes in real time on Orin.[file:1]</li>
-              <li><b>Mono-thermal Depth:</b> MiDaS-style encoder–decoder using multi-scale AnyThermal features, evaluated on MS2 with sparse LiDAR supervision.[file:1]</li>
+              <li><b>Cross-modal Place Recognition:</b> SALAD head over AnyThermal features with triplet loss.</li>
+              <li><b>Thermal Segmentation:</b> a lightweight two-layer MLP head over ViT patch embeddings.</li>
+              <li><b>Mono-thermal Depth:</b> MiDaS-style encoder–decoder using multi-scale AnyThermal features.</li>
             </ul>
           </div>
         </div>
@@ -241,53 +242,62 @@
     </div>
   </section>
 
-  <!-- PLATFORM: TARTANRGBT -->
-  <section class="hero is-white section-anchor" id="platform">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">TartanRGBT Platform</h2>
+<!-- PLATFORM -->
+<section class="hero is-white section-anchor" id="platform">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">TartanRGBT Platform</h2>
 
-        <div class="columns is-vcentered">
-          <div class="column is-half has-text-centered">
-            <!-- Platform CAD (Fig. 3) -->
-            <img src="assets/tartanrgbt_setup.gif" alt="TartanRGBT platform CAD and wiring" style="max-width:100%;">
-            <p class="is-size-7">
-              CAD model and wiring overview of the handheld TartanRGBT platform.[file:1]
+      <div class="columns is-centered">
+        <div class="column is-half has-text-centered">
+          <img src="assets/tartanrgbt_setup.gif" alt="TartanRGBT platform CAD and wiring" style="width:100%; border-radius:8px;">
+          <p class="is-size-7">
+            CAD model and wiring overview of the handheld TartanRGBT platform.
+          </p>
+        </div>
+
+        <div class="column is-half has-text-centered">
+          <img src="assets/cameras_setup.gif" alt="TartanRGBT camera setup" style="width:100%; border-radius:8px;">
+          <p class="is-size-7">
+            Camera and sensor placement in the TartanRGBT platform.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <div class="content has-text-justified">
+            <p>
+              The TartanRGBT platform is a handheld rig that captures synchronized stereo RGB, stereo thermal, and IMU at 30 Hz using a ZED X camera, two FLIR Boson 640+ thermal cameras, and an NVIDIA Jetson AGX Orin 64 GB computer.
+            </p>
+            <p>
+              All cameras are hardware-timed: the ZED X pair is factory-synced, and a trigger from the capture card synchronizes the thermal cameras via external sync pins in slave mode.
+            </p>
+            <p>
+              A custom 3D-printed enclosure with ergonomic handles, cooling fans, and exposed ports makes the system field-ready, while Docker-based auto-launch and a single recording button simplify operation.
             </p>
           </div>
-          <div class="column is-half">
-            <div class="content">
-              <p>
-                The TartanRGBT platform is a handheld rig that captures synchronized stereo RGB, stereo thermal, and IMU at 30 Hz using a ZED X camera, two FLIR Boson 640+ thermal cameras, and an NVIDIA Jetson AGX Orin 64 GB computer.[file:1][file:2]
-              </p>
-              <p>
-                All cameras are hardware-timed: the ZED X pair is factory-synced, and a trigger from the capture card synchronizes the thermal cameras via external sync pins in slave mode.[file:1]
-              </p>
-              <p>
-                A custom 3D-printed enclosure with ergonomic handles, cooling fans, and exposed ports makes the system field-ready, while Docker-based auto-launch and a single recording button simplify operation.[file:1]
-              </p>
-            </div>
-          </div>
         </div>
-
-        <div class="columns">
-          <div class="column">
-            <h3 class="title is-4">Calibration & Registration</h3>
-            <div class="content">
-              <ul>
-                <li>Thermal intrinsics are calibrated using a custom heated checkerboard, followed by fisheye rectification of thermal images.[file:1]</li>
-                <li>Extrinsics between RGB and thermal cameras are derived from the CAD model, enabling 3D-aware alignment.[file:1]</li>
-                <li>Registered RGB–thermal pairs are produced by estimating dense depth with FoundationStereo, transforming points into the thermal frame, and projecting with thermal intrinsics, with z-buffering and bilinear splatting to handle occlusions and sparsity.[file:1]</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
 
-  <!-- DATASET: TARTANRGBT -->
+      <div class="columns">
+        <div class="column">
+          <h3 class="title is-4">Calibration & Registration</h3>
+          <div class="content">
+            <ul>
+              <li>Thermal intrinsics are calibrated using a custom heated checkerboard, followed by fisheye rectification of thermal images.</li>
+              <li>Extrinsics between RGB and thermal cameras are derived from the CAD model, enabling 3D-aware alignment.</li>
+              <li>Registered RGB–thermal pairs are produced by estimating dense depth with FoundationStereo, transforming points into the thermal frame, and projecting with thermal intrinsics.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- DATASET -->
   <section class="section section-anchor" id="dataset">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">TartanRGBT Dataset</h2>
@@ -296,10 +306,10 @@
         <div class="column is-four-fifths">
           <div class="content has-text-justified">
             <p>
-              The TartanRGBT dataset consists of 16,943 synchronized, registered RGB–thermal pairs sampled at 1 Hz for non-redundant distillation, covering indoor, urban driving, parks, and off-road environments.[file:1][file:2]
+              The TartanRGBT dataset consists of 16,943 synchronized, registered RGB–thermal pairs sampled at 1 Hz for non-redundant distillation, covering indoor, urban driving, parks, and off-road environments.
             </p>
             <p>
-              Each sequence includes stereo RGB, stereo thermal, IMU, and thermal FFC status, enabling tasks such as cross-modal place recognition, segmentation, and RGB–thermal translation.[file:1]
+              Each sequence includes stereo RGB, stereo thermal, IMU, and thermal FFC status.
             </p>
           </div>
 
@@ -384,16 +394,12 @@
               </tbody>
             </table>
           </div>
-          <p class="is-size-7">
-            Summary of RGB–T datasets highlighting TartanRGBT’s breadth and synchronization/registration properties.[file:1]
-          </p>
 
-          <!-- Alignment visualization -->
           <div class="columns is-centered" style="margin-top:2rem;">
             <div class="column has-text-centered">
               <img src="assets/TartanRGBT_registration.png" alt="TartanRGBT RGB–thermal registration overlays" style="max-width:100%;">
               <p class="is-size-7">
-                Alpha-blended RGB–thermal overlays across indoor, off-road, and urban domains, showing pixel-wise alignment.[file:1]
+                Alpha-blended RGB–thermal overlays across indoor, off-road, and urban domains, showing pixel-wise alignment.
               </p>
             </div>
           </div>
@@ -410,13 +416,12 @@
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Results Across Tasks</h2>
 
-        <!-- Cross-modal Place Recognition -->
         <div class="columns">
           <div class="column">
             <h3 class="title is-4">Cross-Modal Place Recognition</h3>
             <div class="content">
               <p>
-                AnyThermal with a SALAD head (AnyThermal-VPR) surpasses RGB-only and RGB–thermal baselines on MS2 (urban), CART (aerial), and OdomBeyondVision (indoor) in Recall@1.[file:1][file:2]
+                AnyThermal with a SALAD head (AnyThermal-VPR) surpasses RGB-only and RGB–thermal baselines on MS2 (urban), CART (aerial), and OdomBeyondVision (indoor) in Recall@1.
               </p>
               <div class="table-container">
                 <table class="table is-bordered is-fullwidth is-narrow">
@@ -482,20 +487,16 @@
                   </tbody>
                 </table>
               </div>
-              <p class="is-size-7">
-                Recall@1 across three datasets; AnyThermal-VPR delivers the best performance in all environments.[file:1]
-              </p>
             </div>
           </div>
         </div>
 
-        <!-- Segmentation & Depth -->
         <div class="columns">
           <div class="column">
             <h3 class="title is-4">Thermal Segmentation</h3>
             <div class="content">
               <p>
-                On MFNet, AnyThermal with a two-layer MLP segmentation head achieves 53.47% mIoU and runs at 6.79 FPS on Orin, outperforming RTFFNet-152 and MCNet while being up to 3.6× faster than the closest competitor.[file:1]
+                On MFNet, AnyThermal with a two-layer MLP segmentation head achieves 53.47% mIoU and runs at 6.79 FPS on Orin, outperforming RTFFNet-152 and MCNet while being up to 3.6× faster than the closest competitor.
               </p>
               <div class="table-container">
                 <table class="table is-fullwidth is-narrow">
@@ -535,9 +536,6 @@
                   </tbody>
                 </table>
               </div>
-              <p class="is-size-7">
-                AnyThermal improves both quality and efficiency for thermal semantic segmentation.[file:1]
-              </p>
             </div>
           </div>
 
@@ -545,7 +543,7 @@
             <h3 class="title is-4">Mono-Thermal Depth Estimation</h3>
             <div class="content">
               <p>
-                Plugging AnyThermal into MiDaS on MS2 yields lower AbsRel and RMSE than EfficientNet-Lite3 and RGB DINOv2 backbones.[file:1]
+                Plugging AnyThermal into MiDaS on MS2 yields lower AbsRel and RMSE than EfficientNet-Lite3 and RGB DINOv2 backbones.
               </p>
               <div class="table-container">
                 <table class="table is-fullwidth is-narrow">
@@ -583,40 +581,54 @@
                   </tbody>
                 </table>
               </div>
-              <p class="is-size-7">
-                AnyThermal consistently improves geometric prediction metrics without backbone fine-tuning.[file:1]
-              </p>
             </div>
           </div>
         </div>
 
-        <!-- Scaling & Diversity -->
-        <div class="columns">
-          <div class="column">
-            <h3 class="title is-4">Scaling Data & Diversity</h3>
-            <div class="content has-text-justified">
-              <p>
-                Ablations over pre-training datasets show that simply adding more urban sequences leads to saturation, whereas including TartanRGBT significantly boosts VPR, segmentation, and depth performance across domains.[file:1][file:2]
-              </p>
-              <p>
-                The performance curves indicate that AnyThermal has not yet plateaued with current RGB–T data, suggesting further gains from broader, more diverse thermal datasets.[file:1]
-              </p>
-            </div>
-            <!-- Optional: scaling plot from Fig. 8 -->
-            <div class="has-text-centered">
-              <img src="assets/thermal_segmentation.jpg" alt="Effect of pretraining datasets on downstream performance" style="max-width:100%;">
-              <p class="is-size-7">
-                Effect of adding Boson Nighttime (B), ViVID++ (V), Freiburg (F), STheReO (S), and TartanRGBT (T) on VPR, segmentation, and depth metrics.[file:1]
-              </p>
-            </div>
-          </div>
-        </div>
+<div class="columns">
+  <div class="column">
+    <h3 class="title is-4">Scaling Data & Diversity</h3>
+    <div class="content has-text-justified">
+      <p>
+        Ablations over pre-training datasets show that simply adding more urban sequences leads to saturation, whereas including TartanRGBT significantly boosts VPR, segmentation, and depth performance across domains.
+      </p>
+      <p>
+        The performance curves indicate that AnyThermal has not yet plateaued with current RGB–T data, suggesting further gains from broader, more diverse thermal datasets.
+      </p>
+    </div>
+
+    <div class="columns is-multiline is-centered">
+
+      <div class="column is-one-third has-text-centered">
+        <img src="assets/thermal_segmentation.jpg" alt="Scaling effect on thermal segmentation" style="width:100%; border-radius:8px;">
+        <p class="is-size-7">
+          Segmentation performance vs. pretraining datasets (B, V, F, S, T).
+        </p>
+      </div>
+
+      <div class="column is-one-third has-text-centered">
+        <img src="assets/vpr.jpg" alt="Scaling effect on cross-modal place recognition" style="width:100%; border-radius:8px;">
+        <p class="is-size-7">
+          Cross-modal place recognition performance vs. dataset diversity.
+        </p>
+      </div>
+
+      <div class="column is-one-third has-text-centered">
+        <img src="assets/depth.jpg" alt="Scaling effect on monocular thermal depth estimation" style="width:100%; border-radius:8px;">
+        <p class="is-size-7">
+          Monocular thermal depth estimation error vs. dataset diversity.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
 
       </div>
     </div>
   </section>
 
-  <!-- RESOURCES: CODE, DATA, CONTACT -->
+  <!-- RESOURCES -->
   <section class="section section-anchor" id="resources">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Code, Data & Contact</h2>
@@ -624,9 +636,9 @@
       <div class="columns is-centered">
         <div class="column is-four-fifths has-text-centered">
           <div class="buttons is-centered">
-            <a href="assets/AnyThermal.pdf" class="button is-rounded is-dark" download>
+            <a href="assets/AnyThermal.pdf" class="button is-rounded is-dark" target="_blank">
               <span class="icon"><i class="fas fa-file-pdf"></i></span>
-              <span>Download Paper</span>
+              <span> Paper</span>
             </a>
             <a href="mailto:contact@anythermal.example" class="button is-rounded is-light">
               <span class="icon"><i class="fas fa-envelope"></i></span>
@@ -639,9 +651,9 @@
               Upon acceptance, we will release:
             </p>
             <ul>
-              <li>Pre-trained AnyThermal backbones and task heads for VPR, segmentation, and depth.[file:1]</li>
-              <li>CAD files, BOM, and software stack (Docker, sensor drivers, ROS2 launch) for the TartanRGBT platform.[file:1]</li>
-              <li>The full TartanRGBT dataset with registered RGB–thermal pairs, dense depth, and odometry.[file:1][file:2]</li>
+              <li>Pre-trained AnyThermal backbones and task heads for VPR, segmentation, and depth.</li>
+              <li>CAD files, BOM, and software stack (Docker, sensor drivers, ROS2 launch) for the TartanRGBT platform.</li>
+              <li>The full TartanRGBT dataset with registered RGB–thermal pairs, dense depth, and odometry.</li>
             </ul>
           </div>
         </div>
@@ -688,15 +700,13 @@
     </div>
   </footer>
 
-  <!-- NAVBAR BURGER SCRIPT -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
       if ($navbarBurgers.length > 0) {
         $navbarBurgers.forEach(el => {
           el.addEventListener('click', () => {
-            const target = el.dataset.target;
-            const $target = document.getElementById(target);
+            const $target = document.querySelector('.navbar-menu');
             el.classList.toggle('is-active');
             $target.classList.toggle('is-active');
           });
