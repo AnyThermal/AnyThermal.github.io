@@ -124,6 +124,15 @@
                   <span>Paper</span>
                 </a>
               </span>
+
+                <span class="link-block">
+    <a class="external-link button is-normal is-rounded is-light"
+       style="cursor: not-allowed;"
+       title="Code will be released soon">
+      <span class="icon"><i class="fab fa-github"></i></span>
+      <span>Code (Coming Soon)</span>
+    </a>
+  </span>
               <span class="link-block">
                 <a href="#results" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-chart-line"></i></span>
@@ -135,10 +144,16 @@
           </div>
         </div>
 
-        <!-- Abstract -->
+<p class="has-text-centered" style="margin-top:1rem; margin-bottom:2.5rem; line-height:1.35;">
+  <b>TL;DR:</b> <span style="color:#ff7a00; font-weight:700;">AnyThermal</span> is a universal thermal backbone for<br>
+  • <b>Cross-modal place recognition</b> • <b>Thermal segmentation</b> • <b>Thermal depth estimation</b>
+</p>
+
+<!-- Abstract -->
 <div class="columns is-centered" id="abstract">
   <div class="column is-full">
     <h2 class="title is-3 has-text-centered">Abstract</h2>
+
 
     <!-- Graphical Abstract: full row width -->
     <div class="has-text-centered" style="margin-bottom:1.5rem;">
@@ -523,53 +538,89 @@
           </div>
         </div>
 
-        <div class="columns">
-          <div class="column">
-            <h3 class="title is-4">Thermal Segmentation</h3>
-            <div class="content">
-              <p>
-                On MFNet, AnyThermal with a two-layer MLP segmentation head achieves 53.47% mIoU and runs at 6.79 FPS on Orin, outperforming RTFFNet-152 and MCNet while being up to 3.6× faster than the closest competitor.
-              </p>
-              <div class="table-container">
-                <table class="table is-fullwidth is-narrow">
-                  <thead>
-                    <tr>
-                      <th>Model</th>
-                      <th>Params (M)</th>
-                      <th>mIoU (%)</th>
-                      <th>FPS (Orin)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>RTFNet-152</td>
-                      <td>196.37</td>
-                      <td>47.00</td>
-                      <td>8.37</td>
-                    </tr>
-                    <tr>
-                      <td>MCNet</td>
-                      <td>54.65</td>
-                      <td>51.95</td>
-                      <td>1.88</td>
-                    </tr>
-                    <tr>
-                      <td>RGB DINO-SEG</td>
-                      <td>87.02</td>
-                      <td>45.46</td>
-                      <td>6.79</td>
-                    </tr>
-                    <tr>
-                      <td><b>AnyThermal-SEG</b></td>
-                      <td>87.02</td>
-                      <td><b>53.47</b></td>
-                      <td>6.79</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+        <!-- VPR qualitative results -->
+<div class="columns is-centered is-multiline" style="margin-top:1.5rem;">
+
+  <div class="column is-half has-text-centered">
+    <img src="assets/VPR_1.gif" alt="VPR qualitative result 1" style="width:100%; border-radius:8px;">
+    <p class="is-size-7">RGB-only failure vs. AnyThermal correct match.</p>
+  </div>
+
+  <div class="column is-half has-text-centered">
+    <img src="assets/VPR_2.gif" alt="VPR qualitative result 2" style="width:100%; border-radius:8px;">
+    <p class="is-size-7">Cross-modal retrieval improvement using AnyThermal.</p>
+  </div>
+
+</div>
+
+
+        <div class="column">
+  <h3 class="title is-4">Thermal Segmentation</h3>
+  <div class="content">
+    <p>
+      On MFNet, AnyThermal with a two-layer MLP segmentation head achieves 53.47% mIoU and runs at 6.79 FPS on Orin, outperforming RTFFNet-152 and MCNet while being up to 3.6× faster than the closest competitor.
+    </p>
+
+    <div class="table-container">
+      <table class="table is-fullwidth is-narrow">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Params (M)</th>
+            <th>mIoU (%)</th>
+            <th>FPS (Orin)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RTFNet-152</td>
+            <td>196.37</td>
+            <td>47.00</td>
+            <td>8.37</td>
+          </tr>
+          <tr>
+            <td>MCNet</td>
+            <td>54.65</td>
+            <td>51.95</td>
+            <td>1.88</td>
+          </tr>
+          <tr>
+            <td>RGB DINO-SEG</td>
+            <td>87.02</td>
+            <td>45.46</td>
+            <td>6.79</td>
+          </tr>
+          <tr>
+            <td><b>AnyThermal-SEG</b></td>
+            <td>87.02</td>
+            <td><b>53.47</b></td>
+            <td>6.79</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Segmentation qualitative results (vertical stack) -->
+<div class="columns is-centered is-multiline" style="margin-top:1.5rem;">
+
+  <div class="column is-full has-text-centered">
+    <img src="assets/thermal_quant_1.png"
+         alt="Segmentation qualitative result 1"
+         style="width:100%; max-width:900px; border-radius:8px;">
+    <p class="is-size-7">Baseline segmentation vs. AnyThermal prediction.</p>
+  </div>
+
+  <div class="column is-full has-text-centered">
+    <img src="assets/thermal_quant_2.png"
+         alt="Segmentation qualitative result 2"
+         style="width:100%; max-width:900px; border-radius:8px;">
+    <p class="is-size-7">Improved boundary and class consistency with AnyThermal.</p>
+  </div>
+
+</div>
+
+
+
 
           <div class="column">
             <h3 class="title is-4">Mono-Thermal Depth Estimation</h3>
@@ -698,6 +749,9 @@
   <section class="section section-anchor" id="bibtex">
     <div class="container is-max-desktop content">
       <h2 class="title is-3">BibTeX</h2>
+      <p class="has-text-centered" style="margin-bottom:1rem;">
+  If you find our repository useful, please consider giving it a star ⭐ and citing our paper in your work:
+</p>
       <pre><code>@inproceedings{maheshwari2026anythermal,
   title     = {AnyThermal: Towards Learning Universal Representations for Thermal Perception},
   author    = {Maheshwari, Parv and Karhade, Jay and Chawla, Yogesh and Adu, Isaiah and
