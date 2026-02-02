@@ -340,12 +340,54 @@
         </div>
       </div>
 
+      <div class="columns is-centered" style="margin-top:2rem;">
+  <div class="column has-text-centered">
+
+    <table style="margin:auto; border-collapse:separate; border-spacing:2px; width:100%;">
+
+      <tr>
+        <td><img src="static/images/00001970_alpha000.png" style="width:90%;"></td>
+        <td><img src="static/images/00001970_alpha025.png" style="width:90%;"></td>
+        <td><img src="static/images/00001970_alpha050.png" style="width:90%;"></td>
+        <td><img src="static/images/00001970_alpha075.png" style="width:90%;"></td>
+        <td><img src="static/images/00001970_alpha100.png" style="width:90%;"></td>
+      </tr>
+      <tr>
+        <td><img src="static/images/00002980_alpha000.png" style="width:90%;"></td>
+        <td><img src="static/images/00002980_alpha025.png" style="width:90%;"></td>
+        <td><img src="static/images/00002980_alpha050.png" style="width:90%;"></td>
+        <td><img src="static/images/00002980_alpha075.png" style="width:90%;"></td>
+        <td><img src="static/images/00002980_alpha100.png" style="width:90%;"></td>
+      </tr>
+      <tr>
+        <td><img src="static/images/00002390_alpha000.png" style="width:90%;"></td>
+        <td><img src="static/images/00002390_alpha025.png" style="width:90%;"></td>
+        <td><img src="static/images/00002390_alpha050.png" style="width:90%;"></td>
+        <td><img src="static/images/00002390_alpha075.png" style="width:90%;"></td>
+        <td><img src="static/images/00002390_alpha100.png" style="width:90%;"></td>
+      </tr>
+      <tr>
+        <td class="is-size-6" style="text-align:center;">α = 0.00</td>
+        <td class="is-size-6" style="text-align:center;">α = 0.25</td>
+        <td class="is-size-6" style="text-align:center;">α = 0.50</td>
+        <td class="is-size-6" style="text-align:center;">α = 0.75</td>
+        <td class="is-size-6" style="text-align:center;">α = 1.00</td>
+      </tr>
+    </table>
+
+    <p class="is-size-6" style="margin-top:0.5rem;">
+      Alpha-blended RGB–thermal overlays across different scenes (α controls the transparency of the thermal image over the RGB image), showing pixel-wise alignment.
+    </p>
+
+  </div>
+</div>
     </div>
   </div>
 </section>
 
   <!-- DATASET -->
-  <section class="section section-anchor" id="dataset">
+  <section class="section section-anchor" id="dataset" style="padding-top:1rem;">
+
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">TartanRGBT Dataset</h2>
 
@@ -441,50 +483,6 @@
               </tbody>
             </table>
           </div>
-
-          <div class="columns is-centered" style="margin-top:2rem;">
-  <div class="column has-text-centered">
-
-    <table style="margin:auto; border-collapse:separate; border-spacing:8px; width:120%; transform:translateX(-10%);">
-
-      <tr>
-        <td><img src="static/images/00001970_alpha000.png" style="width:100%;"></td>
-        <td><img src="static/images/00001970_alpha025.png" style="width:100%;"></td>
-        <td><img src="static/images/00001970_alpha050.png" style="width:100%;"></td>
-        <td><img src="static/images/00001970_alpha075.png" style="width:100%;"></td>
-        <td><img src="static/images/00001970_alpha100.png" style="width:100%;"></td>
-      </tr>
-      <tr>
-        <td><img src="static/images/00002980_alpha000.png" style="width:100%;"></td>
-        <td><img src="static/images/00002980_alpha025.png" style="width:100%;"></td>
-        <td><img src="static/images/00002980_alpha050.png" style="width:100%;"></td>
-        <td><img src="static/images/00002980_alpha075.png" style="width:100%;"></td>
-        <td><img src="static/images/00002980_alpha100.png" style="width:100%;"></td>
-      </tr>
-      <tr>
-        <td><img src="static/images/00002390_alpha000.png" style="width:100%;"></td>
-        <td><img src="static/images/00002390_alpha025.png" style="width:100%;"></td>
-        <td><img src="static/images/00002390_alpha050.png" style="width:100%;"></td>
-        <td><img src="static/images/00002390_alpha075.png" style="width:100%;"></td>
-        <td><img src="static/images/00002390_alpha100.png" style="width:100%;"></td>
-      </tr>
-      <tr>
-        <td class="is-size-6" style="text-align:center;">α = 0.00</td>
-        <td class="is-size-6" style="text-align:center;">α = 0.25</td>
-        <td class="is-size-6" style="text-align:center;">α = 0.50</td>
-        <td class="is-size-6" style="text-align:center;">α = 0.75</td>
-        <td class="is-size-6" style="text-align:center;">α = 1.00</td>
-      </tr>
-    </table>
-
-    <p class="is-size-6" style="margin-top:0.5rem;">
-      Alpha-blended RGB–thermal overlays across different scenes (α controls the transparency of the thermal image over the RGB image), showing pixel-wise alignment.
-    </p>
-
-  </div>
-</div>
-
-
         </div>
       </div>
 
@@ -788,28 +786,35 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a class="icon-link" href="assets/AnyThermal.pdf" download>
-          <i class="fas fa-file-pdf"></i>
-        </a>
-        <a class="icon-link" href="mailto:parvm@andrew.cmu.edu">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content has-text-centered">
-            <p>
-              © 2026 AnyThermal Project. All rights reserved.
-            </p>
-          </div>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="assets/AnyThermal.pdf" download>
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="mailto:parvm@andrew.cmu.edu">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p class="is-size-6">
+  This website is adapted from the 
+  <a href="https://github.com/nerfies/nerfies.github.io">Nerfies template</a>, 
+  which is licensed under a 
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+    Creative Commons Attribution-ShareAlike 4.0 International License
+  </a>.
+</p>
+
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
