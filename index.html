@@ -28,6 +28,16 @@
       font-family: monospace;
       font-weight: bold;
     }
+    .publication-authors a {
+  color: #3273dc;              /* normal link color (Bulma default) */
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.publication-authors a:hover {
+  color: #ff7a00;              /* hover color (orange like your theme) */
+}
+
   </style>
 </head>
 
@@ -145,6 +155,16 @@
       <span>Code (Coming Soon)</span>
     </a>
   </span>
+
+  <span class="link-block">
+  <a class="external-link button is-normal is-rounded is-light"
+     style="cursor: not-allowed;"
+     title="Dataset will be released soon">
+    <span class="icon"><i class="fas fa-database"></i></span>
+    <span>Dataset (Coming Soon)</span>
+  </a>
+</span>
+
 
     <span class="link-block">
     <a href="https://docs.google.com/document/d/1X5Av5y16SZzcaHOHzIiit1tz_KwJjkek2Er0iPeW7_g/edit?usp=sharing"

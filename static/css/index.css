@@ -85,9 +85,16 @@ body {
 .publication-banner img {
 }
 
-.publication-authors {
-  /*color: #4286f4;*/
+.publication-authors .author-block a {
+  color: #4632dc !important;
+  transition: color 0.2s ease;
+  text-decoration: none;
 }
+
+.publication-authors .author-block a:hover {
+  color: #ff7a00 !important;
+}
+
 
 .publication-video {
     position: relative;
