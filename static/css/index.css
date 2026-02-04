@@ -84,6 +84,13 @@ body {
 
 .publication-banner img {
 }
+.anythermal-gradient {
+  background: linear-gradient(90deg, #6a1b9a, #ff9800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
 
 .publication-authors .author-block a {
   color: #4632dc !important;
