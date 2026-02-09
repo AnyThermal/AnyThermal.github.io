@@ -59,6 +59,7 @@
         <a class="navbar-item" href="#platform">Platform</a>
         <a class="navbar-item" href="#dataset">Dataset</a>
         <a class="navbar-item" href="#results">Results</a>
+        <a class="navbar-item" href="#scaling">Scaling & Diversity</a>
         <a class="navbar-item" href="#resources">Contact</a>
       </div>
     </div>
@@ -101,9 +102,10 @@
   <span class="author-block">
     <a href="https://riss.ri.cmu.edu/student/isaiah-adu/" target="_blank">Isaiah Adu</a><sup>3</sup>,
   </span>
-<span class="author-block">
+<span class="author-block" style="color:#6a1b9a;">
   Florian Heisen<sup>4</sup>,
 </span>
+
 
 
   <span class="author-block">
@@ -266,19 +268,22 @@
         <div class="content">
           <ul>
             <li>
-              <b>AnyThermal Backbone:</b>
-              A task-agnostic thermal feature extractor developed through knowledge distillation from visual foundation models. When paired with lightweight heads, it achieves state-of-the-art results in thermal segmentation and cross-modal place recognition, while outperforming comparable RGB-based backbones in monocular thermal depth estimation.
-            </li>
-            <li>
-              <b>TartanRGBT Platform:</b>
-              The first open-source, hardware-synchronized framework for simultaneous stereo RGB and thermal image acquisition.
-              By releasing CAD files and a complete software stack, the platform lowers the barrier to large-scale RGB–thermal data collection.
-            </li>
-            <li>
-              <b>TartanRGBT Dataset:</b>
-              A balanced collection of 16,943 synchronized RGB–thermal pairs spanning urban, indoor, off-road, and aerial environments.
-              This diverse dataset substantially improves the generalization and downstream performance of thermal perception models.
-            </li>
+  <b style="color:#ff7a00;">AnyThermal Backbone:</b>
+  A task-agnostic thermal feature extractor developed through knowledge distillation from visual foundation models. When paired with lightweight heads, it achieves state-of-the-art results in thermal segmentation and cross-modal place recognition, while outperforming comparable RGB-based backbones in monocular thermal depth estimation.
+</li>
+
+<li>
+  <b style="color:#ff7a00;">TartanRGBT Platform:</b>
+  The first open-source, hardware-synchronized framework for simultaneous stereo RGB and thermal image acquisition.
+  By releasing CAD files and a complete software stack, the platform lowers the barrier to large-scale RGB–thermal data collection.
+</li>
+
+<li>
+  <b style="color:#ff7a00;">TartanRGBT Dataset:</b>
+  A balanced collection of 16,943 synchronized RGB–thermal pairs spanning urban, indoor, off-road, and aerial environments.
+  This diverse dataset substantially improves the generalization and downstream performance of thermal perception models.
+</li>
+
           </ul>
         </div>
       </div>
@@ -348,15 +353,18 @@
               Thermal images are converted to three channels and passed through the student; a contrastive loss aligns the CLS-token embeddings of corresponding RGB–thermal pairs, encouraging shared global semantics while relaxing pixel-perfect alignment.
             </p>
             <p>
-              Distillation is performed across multiple RGB–T datasets, allowing the backbone to learn environment-agnostic thermal features that support diverse downstream heads.
-            </p>
+  Distillation is performed across multiple RGB–thermal datasets, enabling the backbone to learn environment-agnostic thermal representations that generalize across tasks and domains.
+  In particular, <b style="color:#ff7a00;">AnyThermal</b> is trained using five datasets spanning diverse environments, including urban driving datasets such as ViVID++ (outdoor sequences), STheREo, Freiburg, and <b style="color:#ff7a00;">TartanRGBT</b> (ours); the Boson Nighttime Dataset for aerial scenarios; and <b style="color:#ff7a00;">TartanRGBT</b> (ours) for both indoor and off-road environments.
+</p>
+
           </div>
         </div>
         <div class="column is-half has-text-centered">
           <img src="assets/student_teacher.png" alt="AnyThermal distillation overview" style="max-width:100%;">
           <p class="is-size-7">
-            Overview of RGB–thermal distillation and task-specific heads (VPR, segmentation, depth).
-          </p>
+  Task-agnostic knowledge distillation from a frozen RGB DINOv2 teacher to a trainable thermal student (<b style="color:#ff7a00;">AnyThermal</b>), enabling label-free learning of generalizable thermal features across environments.
+</p>
+
         </div>
       </div>
 
@@ -479,18 +487,20 @@
       <h2 class="title is-3 has-text-centered">TartanRGBT Dataset</h2>
 
       <div class="columns is-centered">
-        <div class="column is-four-fifths">
+        <div class="column is-full">
           <div class="content has-text-justified">
             <p>
-              The TartanRGBT dataset consists of 16,943 synchronized, registered RGB–thermal pairs sampled at 1 Hz for non-redundant distillation, covering indoor, urban driving, parks, and off-road environments.
-            </p>
-            <p>
-              Each sequence includes stereo RGB, stereo thermal, IMU, and thermal FFC status.
-            </p>
+  The TartanRGBT dataset consists of 16,943 synchronized, registered RGB–thermal pairs sampled at 1 Hz for non-redundant distillation, covering indoor, urban driving, parks, and off-road environments.
+</p>
+<p>
+  Each sequence includes stereo RGB, stereo thermal, IMU, and thermal FFC status.
+  We will also release the data as ROS bag files, allowing users to extract synchronized sensor streams at their desired sampling frequency.
+</p>
+
           </div>
 
           <h3 class="title is-4">Diversity Compared to Existing RGB–T Datasets</h3>
-          <div class="table-container">
+          
             <table class="table is-striped is-fullwidth is-hoverable">
               <thead>
                 <tr>
@@ -657,20 +667,28 @@
           </div>
         </div>
 
-        <!-- VPR qualitative results -->
-<div class="columns is-centered is-multiline" style="margin-top:1.5rem;">
+<!-- VPR qualitative results -->
+<h3 class="title is-4">Qualitative Cross-Modal Place Recognition</h3>
+</h4>
+
+
+<div class="columns is-centered is-multiline" style="margin-top:1rem;">
 
   <div class="column is-half has-text-centered">
-    <img src="assets/VPR_1.gif" alt="VPR qualitative result 1" style="width:100%; border-radius:8px;">
-    <p class="is-size-7">RGB-only failure vs. AnyThermal correct match.</p>
+    <img src="assets/VPR_1.gif" alt="RGB-only baseline failure" style="width:100%; border-radius:8px;">
   </div>
 
   <div class="column is-half has-text-centered">
-    <img src="assets/VPR_2.gif" alt="VPR qualitative result 2" style="width:100%; border-radius:8px;">
-    <p class="is-size-7">Cross-modal retrieval improvement using AnyThermal.</p>
+    <img src="assets/VPR_2.gif" alt="AnyThermal correct retrieval" style="width:100%; border-radius:8px;">
   </div>
 
 </div>
+
+<p class="is-size-7 has-text-centered" style="margin-top:0.5rem;">
+  <b>Left:</b> RGB-only baseline fails to retrieve the correct location under appearance changes.
+  <b>Right:</b> <b style="color:#ff7a00;">AnyThermal</b> successfully retrieves the correct place using thermal representations.
+</p>
+
 
 
         <div class="column">
@@ -786,49 +804,102 @@
             </div>
           </div>
         </div>
-
-<div class="columns">
-  <div class="column">
-    <h3 class="title is-4">Scaling Data & Diversity</h3>
-    <div class="content has-text-justified">
-      <p>
-        Ablations over pre-training datasets show that simply adding more urban sequences leads to saturation, whereas including TartanRGBT significantly boosts VPR, segmentation, and depth performance across domains.
-      </p>
-      <p>
-        The performance curves indicate that AnyThermal has not yet plateaued with current RGB–T data, suggesting further gains from broader, more diverse thermal datasets.
-      </p>
-    </div>
-
-    <div class="columns is-multiline is-centered">
-
-      <div class="column is-one-third has-text-centered">
-        <img src="assets/thermal_segmentation.jpg" alt="Scaling effect on thermal segmentation" style="width:100%; border-radius:8px;">
-        <p class="is-size-7">
-          Segmentation performance vs. pretraining datasets (B, V, F, S, T).
-        </p>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <img src="assets/vpr.jpg" alt="Scaling effect on cross-modal place recognition" style="width:100%; border-radius:8px;">
-        <p class="is-size-7">
-          Cross-modal place recognition performance vs. dataset diversity.
-        </p>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <img src="assets/depth.jpg" alt="Scaling effect on monocular thermal depth estimation" style="width:100%; border-radius:8px;">
-        <p class="is-size-7">
-          Monocular thermal depth estimation error vs. dataset diversity.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</div>
-
       </div>
     </div>
   </section>
+
+  <!-- SCALING DATA & DIVERSITY -->
+<section class="section section-anchor" id="scaling">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3 has-text-centered">Scaling Data & Diversity</h2>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+
+        <div class="content has-text-justified">
+          <p>
+            Ablation studies over pre-training datasets show that simply adding more urban data leads to performance saturation.
+            In contrast, incorporating <b style="color:#ff7a00;">TartanRGBT</b> significantly improves cross-modal place recognition, thermal segmentation, and depth estimation across domains.
+          </p>
+
+          <p>
+            The observed trends indicate that <b style="color:#ff7a00;">AnyThermal</b> has not yet plateaued with the current scale of RGB–thermal data, suggesting further gains from broader and more diverse data collection.
+          </p>
+
+          <p>
+            Training on a single aerial dataset introduces domain bias, reducing performance in urban scenes while improving results on aerial benchmarks.
+            This highlights the importance of multi-domain RGB–thermal data for learning transferable thermal representations.
+          </p>
+        </div>
+
+        <div class="columns is-multiline is-centered" style="margin-top:1.5rem;">
+
+          <div class="column is-one-third has-text-centered">
+            <img src="assets/thermal_segmentation.jpg"
+                 alt="Scaling effect on thermal segmentation"
+                 style="width:100%; border-radius:8px;">
+            <p class="is-size-7">
+              Thermal segmentation performance vs. pre-training datasets.
+            </p>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <img src="assets/vpr.jpg"
+                 alt="Scaling effect on cross-modal place recognition"
+                 style="width:100%; border-radius:8px;">
+            <p class="is-size-7">
+              Cross-modal place recognition performance vs. dataset diversity.
+            </p>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <img src="assets/depth.jpg"
+                 alt="Scaling effect on monocular thermal depth estimation"
+                 style="width:100%; border-radius:8px;">
+            <p class="is-size-7">
+              Monocular thermal depth estimation error vs. dataset diversity.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- HOW TO CITE -->
+<section class="section section-anchor" id="citation">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">BibTex</h2>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <p>
+  If you find our repository useful, please cite our paper in your work:
+</p>
+
+<pre><code>@misc{maheshwari2026anythermallearninguniversalrepresentations,
+      title={AnyThermal: Towards Learning Universal Representations for Thermal Perception}, 
+      author={Parv Maheshwari and Jay Karhade and Yogesh Chawla and Isaiah Adu and Florian Heisen and Andrew Porco and Andrew Jong and Yifei Liu and Santosh Pitla and Sebastian Scherer and Wenshan Wang},
+      year={2026},
+      eprint={2602.06203},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2602.06203}, 
+}</code></pre>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- RESOURCES -->
   <section class="section section-anchor" id="resources">
