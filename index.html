@@ -101,11 +101,13 @@
   <span class="author-block">
     <a href="https://riss.ri.cmu.edu/student/isaiah-adu/" target="_blank">Isaiah Adu</a><sup>3</sup>,
   </span>
+<span class="author-block">
+  Florian Heisen<sup>4</sup>,
+</span>
+
+
   <span class="author-block">
-    <a href="https://www.ri.cmu.edu/ri-people/florian-heisen/" target="_blank">Florian Heisen</a><sup>1</sup>,
-  </span>
-  <span class="author-block">
-    <a href="https://www.ri.cmu.edu/ri-people/andrew-porco/" target="_blank">Andrew Porco</a><sup>4</sup>,
+    <a href="https://www.ri.cmu.edu/ri-people/andrew-porco/" target="_blank">Andrew Porco</a><sup>5</sup>,
   </span>
   <span class="author-block">
     <a href="https://www.ri.cmu.edu/ri-people/andrew-jong/" target="_blank">Andrew Jong</a><sup>1</sup>,
@@ -129,7 +131,8 @@
   <span class="author-block"><sup>1</sup>Robotics Institute, Carnegie Mellon University, Pittsburgh, PA, USA</span><br>
   <span class="author-block"><sup>2</sup>Biological Systems Engineering, University of Nebraska–Lincoln, Lincoln, NE, USA</span><br>
   <span class="author-block"><sup>3</sup>Mechanical Engineering, Penn State University, University Park, PA, USA</span><br>
-  <span class="author-block"><sup>4</sup>Mechanical Engineering, Carnegie Mellon University, Pittsburgh, PA, USA</span>
+  <span class="author-block"><sup>4</sup>School of Engineering and Design, Technical University of Munich, Munich, Germany</span><br>
+  <span class="author-block"><sup>5</sup>Mechanical Engineering, Carnegie Mellon University, Pittsburgh, PA, USA</span>
 </div>
 
 
@@ -142,8 +145,10 @@
             <!-- Links -->
             <div class="publication-links">
               <span class="link-block">
-                <a href="assets/AnyThermal.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <a href="https://arxiv.org/abs/2602.06203" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+  <img src="assets/arxiv_x_logo.png" alt="arXiv" style="height:1.2em;">
+</span>
                   <span>Paper</span>
                 </a>
               </span>
@@ -213,9 +218,13 @@
 
         <p class="has-text-centered" style="margin-top:1rem; margin-bottom:2.5rem; line-height:1.35;">
   <b>TL;DR:</b>
-  <span style="color:#ff7a00; font-weight:700;">AnyThermal</span> is a universal thermal perception backbone that learns robust, task-agnostic representations by distilling knowledge from large visual foundation models.
-  <span style="color:#ff7a00; font-weight:700;">TartanRGBT</span> is an open-source RGB–thermal payload and diverse multi-environment dataset designed to scale high-quality thermal data collection.
+  <span style="color:#ff7a00; font-weight:700;">AnyThermal</span> is a task-agnostic backbone achieving state-of-the-art results in thermal place recognition, segmentation, and depth estimation by distilling visual foundation models.
+  Supporting this is the
+  <span style="color:#ff7a00; font-weight:700;">TartanRGBT platform</span>, the first open-source framework for hardware-synchronized RGB–thermal data collection.
+  We leverage this to provide the
+  <span style="color:#ff7a00; font-weight:700;">TartanRGBT dataset</span>—16,943 diverse RGB–thermal pairs across urban, indoor, off-road, and park environments.
 </p>
+
 
 
 
@@ -234,43 +243,49 @@
            style="width:100%; border-radius:8px;">
     </div>
 
-    <div class="content has-text-justified">
-      <p>
-        We present <b>AnyThermal</b>, a task-agnostic thermal feature extraction backbone designed to provide strong generalization across diverse robotic perception tasks and environments.
-      </p>
-      <p>
-        AnyThermal is distilled from large-scale RGB foundation models (DINOv2) using synchronized RGB–thermal data collected from urban, indoor, aerial, and off-road domains.
-      </p>
-      <p>
-        To support this, we introduce the <b>TartanRGBT Platform</b>, an open-source hardware system for synchronized RGB–thermal data collection, and the <b>TartanRGBT Dataset</b>, a diverse multi-environment RGB–thermal dataset.
-      </p>
-      <p>
-        AnyThermal achieves state-of-the-art performance on cross-modal place recognition, thermal segmentation, and monocular thermal depth estimation, with improvements of up to 36% over existing baselines.
-      </p>
-    </div>
-  </div>
+<div class="content has-text-justified">
+  <p>
+    We present <b>AnyThermal</b>, a thermal backbone that captures robust, task-agnostic thermal features suitable for a variety of tasks such as cross-modal place recognition, thermal segmentation, and monocular depth estimation using thermal images.
+    Existing thermal backbones that follow task-specific training from small-scale data result in utility limited to a specific environment and task.
+    Unlike prior methods, <b>AnyThermal</b> can be used across a wide range of environments (indoor, aerial, off-road, urban) and tasks without task-specific training.
+    Our key insight is to distill feature representations from visual foundation models such as DINOv2 into a thermal encoder using data collected across these environments.
+    To bridge the diversity gap in existing RGB–thermal datasets, we introduce the <b>TartanRGBT platform</b>, the first open-source data collection framework with hardware-synchronized RGB–thermal image acquisition.
+    Using this payload, we collect the <b>TartanRGBT dataset</b>, a diverse and balanced dataset spanning four environments.
+    We demonstrate the effectiveness of <b>AnyThermal</b> and <b>TartanRGBT</b>, achieving state-of-the-art results with improvements of up to 36% across diverse environments and downstream tasks.
+  </p>
 </div>
 
 
-  <!-- KEY CONTRIBUTIONS -->
-  <section class="section section-anchor" id="specs">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3 has-text-centered">Key Contributions</h2>
-          <div class="content">
-            <ul>
-              <li><b>AnyThermal:</b> a DINOv2-based thermal encoder obtained via RGB–thermal knowledge distillation, usable as a drop-in backbone for multiple tasks.</li>
-              <li><b>Task-agnostic training:</b> contrastive distillation on CLS tokens across multiple RGB–T datasets spanning urban, indoor, aerial, and off-road environments.</li>
-              <li><b>Downstream performance:</b> state-of-the-art cross-modal place recognition, thermal segmentation, and monocular thermal depth estimation, outperforming comparable RGB-only backbones.</li>
-              <li><b>TartanRGBT platform:</b> first open-source synchronized stereo RGB–stereo thermal, IMU data collection rig built on NVIDIA Orin and FLIR Boson sensors.</li>
-              <li><b>TartanRGBT dataset:</b> a balanced, diverse RGB–T dataset across four environments (indoor, urban, parks, off-road) with registered, time-synced pairs.</li>
-            </ul>
-          </div>
+
+<!-- KEY CONTRIBUTIONS -->
+<section class="section section-anchor" id="specs">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Key Contributions</h2>
+        <div class="content">
+          <ul>
+            <li>
+              <b>AnyThermal Backbone:</b>
+              A task-agnostic thermal feature extractor developed through knowledge distillation from visual foundation models. When paired with lightweight heads, it achieves state-of-the-art results in thermal segmentation and cross-modal place recognition, while outperforming comparable RGB-based backbones in monocular thermal depth estimation.
+            </li>
+            <li>
+              <b>TartanRGBT Platform:</b>
+              The first open-source, hardware-synchronized framework for simultaneous stereo RGB and thermal image acquisition.
+              By releasing CAD files and a complete software stack, the platform lowers the barrier to large-scale RGB–thermal data collection.
+            </li>
+            <li>
+              <b>TartanRGBT Dataset:</b>
+              A balanced collection of 16,943 synchronized RGB–thermal pairs spanning urban, indoor, off-road, and aerial environments.
+              This diverse dataset substantially improves the generalization and downstream performance of thermal perception models.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
 <!-- TEASER: GIF GRID -->
 <section class="hero is-light section-anchor" id="teaser">
