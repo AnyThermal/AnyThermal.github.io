@@ -171,13 +171,18 @@
 
 
 <span class="link-block">
-  <a class="external-link button is-normal is-rounded is-light"
-     style="cursor: not-allowed;"
-     title="Interactive demo coming soon">
-    <span class="icon"><i class="fas fa-rocket"></i></span>
-    <span>Try Model (Coming Soon)</span>
+  <a href="https://huggingface.co/theairlabcmu/AnyThermal"
+     class="external-link button is-normal is-rounded is-dark"
+     target="_blank" rel="noopener">
+    <span class="icon">
+      <img src="https://huggingface.co/front/assets/huggingface_logo.svg"
+           alt="Hugging Face"
+           style="height:1.2em;">
+    </span>
+    <span>Try Model</span>
   </a>
 </span>
+
 
 
 <span class="link-block">
@@ -185,7 +190,16 @@
      class="external-link button is-normal is-rounded is-dark"
      target="_blank" rel="noopener">
     <span class="icon"><i class="fab fa-github"></i></span>
-    <span>Code</span>
+    <span>AnyThermal</span>
+  </a>
+</span>
+
+<span class="link-block">
+  <a href="https://github.com/AnyThermal/tartan_rgbt_ws"
+     class="external-link button is-normal is-rounded is-dark"
+     target="_blank" rel="noopener">
+    <span class="icon"><i class="fab fa-github"></i></span>
+    <span>TartanRGBT Software Stack</span>
   </a>
 </span>
 
@@ -293,49 +307,51 @@
 </section>
 
 
-<!-- TEASER: GIF GRID -->
+<!-- TEASER: Interactive Demo -->
 <section class="hero is-light section-anchor" id="teaser">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
+
           <h2 class="title is-3">AnyThermal in Action</h2>
-          <p class="subtitle is-6">
-            AnyThermal performance across indoor, park, off-road, and urban environments.
-          </p>
 
-          <div class="columns is-multiline is-centered">
-
-            <div class="column is-half">
-              <img src="assets/indoor.gif" alt="Indoor results" style="width:100%; border-radius:8px;">
-              <p class="is-size-6">Indoor</p>
-            </div>
-
-            <div class="column is-half">
-              <img src="assets/parks.gif" alt="Park results" style="width:100%; border-radius:8px;">
-              <p class="is-size-6">Parks</p>
-            </div>
-
-            <div class="column is-half">
-              <img src="assets/offroad.gif" alt="Off-road results" style="width:100%; border-radius:8px;">
-              <p class="is-size-6">Off-road</p>
-            </div>
-
-            <div class="column is-half">
-              <img src="assets/urban.gif" alt="Urban results" style="width:100%; border-radius:8px;">
-              <p class="is-size-6">Urban</p>
-            </div>
-
+          <!-- Task Buttons -->
+          <div class="buttons is-centered" style="margin-bottom:1.5rem;">
+            <button class="button is-rounded is-dark demo-btn is-active"
+                    onclick="switchDemo('vpr')">
+              Cross-Modal Place Recognition
+            </button>
+            <button class="button is-rounded is-dark demo-btn"
+                    onclick="switchDemo('seg')">
+              Segmentation
+            </button>
+            <button class="button is-rounded is-dark demo-btn"
+                    onclick="switchDemo('depth')">
+              Depth
+            </button>
           </div>
 
-          <p style="margin-top:1rem;">
-            Thermal segmentation and cross-modal place recognition examples highlight the benefits over RGB-only backbones.
-          </p>
+          <!-- Single Display Window -->
+          <div class="columns is-centered">
+            <div class="column is-two-thirds has-text-centered">
+              <img id="demo-image"
+                   src="assets/AnyThermal-VPR.png"
+                   style="width:100%; border-radius:8px; transition:0.3s ease;">
+              <p id="demo-caption"
+                 class="is-size-6"
+                 style="margin-top:0.5rem;">
+                Robust place retrieval under severe illumination and appearance changes.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 </section>
+       
 
   <!-- METHOD -->
   <section class="section section-anchor" id="method">
@@ -481,11 +497,42 @@
   </div>
 </section>
 
-  <!-- DATASET -->
-  <section class="section section-anchor" id="dataset" style="padding-top:1rem;">
+<!-- DATASET -->
+<section class="section section-anchor" id="dataset" style="padding-top:1rem;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">TartanRGBT Dataset</h2>
 
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">TartanRGBT Dataset</h2>
+    <div class="columns is-multiline is-centered is-variable is-4">
+
+      <div class="column is-half has-text-centered">
+        <img src="assets/indoor.gif"
+             alt="Indoor results"
+             style="width:100%; border-radius:8px;">
+        <p class="is-size-6 has-text-centered" style="margin-top:0.5rem;">Indoor</p>
+      </div>
+
+      <div class="column is-half has-text-centered">
+        <img src="assets/parks.gif"
+             alt="Park results"
+             style="width:100%; border-radius:8px;">
+        <p class="is-size-6 has-text-centered" style="margin-top:0.5rem;">Parks</p>
+      </div>
+
+      <div class="column is-half has-text-centered">
+        <img src="assets/offroad.gif"
+             alt="Off-road results"
+             style="width:100%; border-radius:8px;">
+        <p class="is-size-6 has-text-centered" style="margin-top:0.5rem;">Off-road</p>
+      </div>
+
+      <div class="column is-half has-text-centered">
+        <img src="assets/urban.gif"
+             alt="Urban results"
+             style="width:100%; border-radius:8px;">
+        <p class="is-size-6 has-text-centered" style="margin-top:0.5rem;">Urban</p>
+      </div>
+
+    </div>
 
       <div class="columns is-centered">
         <div class="column is-full">
@@ -673,22 +720,22 @@
 </h4>
 
 
-<div class="columns is-centered is-multiline" style="margin-top:1rem;">
+<div class="columns is-centered" style="margin-top:1rem;">
 
-  <div class="column is-half has-text-centered">
-    <img src="assets/VPR_1.gif" alt="RGB-only baseline failure" style="width:100%; border-radius:8px;">
-  </div>
-
-  <div class="column is-half has-text-centered">
-    <img src="assets/VPR_2.gif" alt="AnyThermal correct retrieval" style="width:100%; border-radius:8px;">
+  <div class="column is-two-thirds has-text-centered">
+    <img src="assets/VPR_combined.gif"
+         alt="Cross-modal place recognition comparison"
+         style="width:100%; border-radius:8px;">
   </div>
 
 </div>
 
 <p class="is-size-7 has-text-centered" style="margin-top:0.5rem;">
-  <b>Left:</b> RGB-only baseline fails to retrieve the correct location under appearance changes.
-  <b>Right:</b> <b style="color:#ff7a00;">AnyThermal</b> successfully retrieves the correct place using thermal representations.
+  <b>Middle:</b> The RGB-only baseline retrieves an incorrect database match under significant illumination and appearance changes.<br>
+  <b>Right:</b> <b style="color:#ff7a00;">AnyThermal</b> correctly retrieves the true location by leveraging robust thermal representations that are invariant to lighting variations.
 </p>
+
+
 
 
 
@@ -742,7 +789,7 @@
 <div class="columns is-centered is-multiline" style="margin-top:1.5rem;">
 
   <div class="column is-full has-text-centered">
-    <img src="assets/thermal_quant_1.png"
+    <img src="assets/image.png"
          alt="Segmentation qualitative result 1"
          style="width:100%; max-width:900px; border-radius:8px;">
     <p class="is-size-7">Baseline segmentation vs. AnyThermal prediction.</p>
@@ -973,6 +1020,40 @@
       }
     });
   </script>
+
+  <script>
+  function switchDemo(type) {
+
+    const image = document.getElementById("demo-image");
+    const caption = document.getElementById("demo-caption");
+    const buttons = document.querySelectorAll(".demo-btn");
+
+    // Remove active state
+    buttons.forEach(btn => btn.classList.remove("is-active"));
+
+    if (type === "vpr") {
+      image.src = "assets/AnyThermal-VPR.png";
+      caption.innerText =
+        "Robust place retrieval under severe illumination and appearance changes.";
+      buttons[0].classList.add("is-active");
+    }
+
+    if (type === "seg") {
+      image.src = "assets/AnyThermal-Seg.png";
+      caption.innerText =
+        "Accurate semantic boundaries using distilled thermal representations.";
+      buttons[1].classList.add("is-active");
+    }
+
+    if (type === "depth") {
+      image.src = "assets/AnyThermal-Depth.png";
+      caption.innerText =
+        "Depth prediction from thermal imagery using a frozen AnyThermal backbone.";
+      buttons[2].classList.add("is-active");
+    }
+  }
+</script>
+
 
 </body>
 </html>
