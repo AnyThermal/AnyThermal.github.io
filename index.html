@@ -1032,25 +1032,25 @@
     buttons.forEach(btn => btn.classList.remove("is-active"));
 
     if (type === "vpr") {
-      image.src = "assets/AnyThermal-VPR.png";
-      caption.innerText =
-        "Robust place retrieval under severe illumination and appearance changes.";
-      buttons[0].classList.add("is-active");
-    }
+    image.src = "assets/AnyThermal-VPR.png";
+    caption.innerHTML =
+      "<b>Environment: Indoor</b><br>Cross-Modal Place Recognition demonstrating robust place retrieval under severe illumination and appearance changes.";
+    buttons[0].classList.add("is-active");
+  }
 
-    if (type === "seg") {
-      image.src = "assets/AnyThermal-Seg.png";
-      caption.innerText =
-        "Accurate semantic boundaries using distilled thermal representations.";
-      buttons[1].classList.add("is-active");
-    }
+  if (type === "seg") {
+    image.src = "assets/AnyThermal-Seg.png";
+    caption.innerHTML =
+      "<b>Environment: Off-road (Aerial View)</b><br>Thermal Segmentation with accurate semantic boundaries using distilled thermal representations.";
+    buttons[1].classList.add("is-active");
+  }
 
-    if (type === "depth") {
-      image.src = "assets/AnyThermal-Depth.png";
-      caption.innerText =
-        "Depth prediction from thermal imagery using a frozen AnyThermal backbone.";
-      buttons[2].classList.add("is-active");
-    }
+  if (type === "depth") {
+    image.src = "assets/AnyThermal-Depth.png";
+    caption.innerHTML =
+      "<b>Environment: Urban Road</b><br>Monocular Thermal Depth Estimation using a frozen AnyThermal backbone.";
+    buttons[2].classList.add("is-active");
+  }
   }
 </script>
 
